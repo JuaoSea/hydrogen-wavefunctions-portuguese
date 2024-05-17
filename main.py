@@ -12,7 +12,7 @@ def radial_function(n, l, r, a0):
 
     Args:
         n (int): Número quântico principal
-        l (int): Númeria quântico azimutal
+        l (int): Número quântico azimutal
         r (numpy.ndarray): Coordenada radial
         a0 (float): Raio de Bohr em escala
     Returns:
@@ -35,7 +35,7 @@ def angular_function(m, l, theta, phi):
 
     Args:
         n (int): Número quântico principal
-        l (int): Númeria quântico azimutal
+        l (int): Número quântico azimutal
         r (numpy.ndarray): Coordenada radial
         a0 (float): Raio de Bohr em escala
     Returns:
@@ -57,7 +57,7 @@ def compute_wavefunction(n, l, m, a0_scale_factor):
 
     Args:
         n (int): Número quântico principal
-        l (int): Númeria quântico azimutal
+        l (int): Número quântico azimutal
         r (numpy.ndarray): Coordenada radial
         a0 (float): Raio de Bohr em escala
     Returns:
