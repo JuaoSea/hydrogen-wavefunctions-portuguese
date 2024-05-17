@@ -178,7 +178,7 @@ def plot_wf_probability_density(n, l, m, a0_scale_factor, dark_theme=False, colo
         r' |R_{n\ell}(r) Y_{\ell}^{m}(\theta, \varphi)|^2$'
     ), fontsize=36)
     ax.text(30, 615, r'$({0}, {1}, {2})$'.format(n, l, m), color='#dfdfdf', fontsize=42)
-    ax.text(770, 140, 'Probabilidade de distribuição do elétron', rotation='vertical', fontsize=40)
+    ax.text(770, 140, 'Probabilidade de distribuição do elétron', rotation='vertical', fontsize=30)
     ax.text(705, 700, 'Maior\nprobabilidade', fontsize=24)
     ax.text(705, -60, 'Menor\nprobabilidade', fontsize=24)
     ax.text(775, 590, '+', fontsize=34)
@@ -205,7 +205,7 @@ if __name__ == '__main__':
     parser.add_argument('m', type=int, help='(m) Número quântico magnético (int)', nargs='?')
     parser.add_argument('a0_scale_factor', type=float, help='Raio de Bohr (float)', nargs='?')
 
-    # Argumentos opicionais 
+    # Argumentos opcionais 
     parser.add_argument('--dark_theme', action='store_true', help='If set, the plot uses a dark theme')
     parser.add_argument('--colormap', type=str, default='rocket', help='Seaborn plot colormap')
     args = parser.parse_args()
@@ -252,7 +252,7 @@ if __name__ == '__main__':
             except ValueError:
                 print('(!) Insira um número válido maior que  0')
 
-        print('\nParâmetros opicionais  /')
+        print('\nParâmetros opcionais  /')
         dark_theme_choice = input(
             '[Pressione ENTER para pular] Você quer usar o tema escuro? [yes/y] (padrão é no): '
         ).lower()
@@ -272,3 +272,4 @@ if __name__ == '__main__':
 
     # Plotar densidade de probabilidade da função de onda
     plot_wf_probability_density(args.n, args.l, args.m, args.a0_scale_factor, args.dark_theme, args.colormap)
+    
