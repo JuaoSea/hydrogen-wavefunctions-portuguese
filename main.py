@@ -195,8 +195,8 @@ if __name__ == '__main__':
 
     # Configurando as linhas de comando dos argumentos
     parser = argparse.ArgumentParser(
-        description='Hydrogen Atom - Wavefunction and Electron Density Visualization '
-                    'for specific quantum states (n, l, m).'
+        description='Átomo de hidrogênio - Visualização da função de onda e densidade eletrônica '
+                    'para estados quânticos específicos (n, l, m).'
     )
 
     # Argumentos requeridos
@@ -206,8 +206,8 @@ if __name__ == '__main__':
     parser.add_argument('a0_scale_factor', type=float, help='Raio de Bohr (float)', nargs='?')
 
     # Argumentos opcionais 
-    parser.add_argument('--dark_theme', action='store_true', help='If set, the plot uses a dark theme')
-    parser.add_argument('--colormap', type=str, default='rocket', help='Seaborn plot colormap')
+    parser.add_argument('--dark_theme', action='store_true', help='Se setado, será plotado com o tema escuro')
+    parser.add_argument('--colormap', type=str, default='rocket', help='Mapa de cores Seaborn')
     args = parser.parse_args()
 
     #Essa seção vai executar se você clicar no script ou rodar sem qualquer argumento
