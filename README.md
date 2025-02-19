@@ -82,7 +82,7 @@ Descreve o spin intrínseco do elétron.
 
 <br>
 
-> [!NOTA]
+> [!NOTE]
 > No átomo de hidrogênio, ou qualquer átomo com um único elétron (como hélio ionizado, lítio, etc.),
 o spin do elétron não interage com mais nada para afetar sua distribuição espacial.
 >
