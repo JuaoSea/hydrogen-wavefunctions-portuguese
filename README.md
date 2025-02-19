@@ -1,7 +1,6 @@
-# Hydrogen Wavefunctions & Electron Density Plots
+# Funções de onda do hidrogênio e gráficos de densidade eletrônica
 
-Modeling and visualization of hydrogen atom wavefunctions and 
-electron probability density.
+Modelagem e visualização de funções de onda de átomos de hidrogênio e densidade de probabilidade de elétrons.
 
 * Python 3.11.4
 * Matplotlib 3.7.2
@@ -9,66 +8,46 @@ electron probability density.
 * NumPy 1.25.2
 * SciPy 1.11.1
 
----
-### Main Project Files | Execution Methods
-* [Standalone Module](hydrogen_wavefunction.py)
-* [Standalone Module with extended comments](hydrogen_wavefunction_annotated.py)
-* [Executable with CLI & Command Line Arguments](hydrogen_wavefunction_cli.py)
-* [IPython Notebook / Jupyter Notebook](hydrogen_wavefunction_notebook.ipynb)
----
+### 1. Mecânica Quântica e Sistemas Atômicos: Uma breve visão geral
 
-## Content
-#### Theoretical Background
-* [Quantum Mechanics and Atomic Systems: A Brief Overview](#1-quantum-mechanics-and-atomic-systems-a-brief-overview)
-* [Schrödinger Equation for Hydrogen Atom Wavefunctions](#2-schrödinger-equation-for-hydrogen-atom-wavefunctions)
-  
-#### Practical Implementation
-* [Execution](#execution)
+A mecânica quântica (QM) é a teoria fundamental da física que fornece uma
+descrição das propriedades físicas da natureza na escala de átomos e partículas subatômicas.
+Ao contrário da mecânica clássica, que descreve fenômenos macroscópicos, a QM aborda o comportamento
+da matéria e da energia no nível quântico (discreto).
 
----
-
-### 1. Quantum Mechanics and Atomic Systems: A Brief Overview
-
-Quantum mechanics (QM) is the fundamental theory in physics that provides a 
-description of the physical properties of nature at the scale of atoms and subatomic particles. 
-Unlike classical mechanics which describes macroscopic phenomena, QM addresses the behavior 
-of matter and energy on the quantum (smallest discrete) level.
-
-The hydrogen atom is especially significant as it is the simplest atom, containing just one electron. 
-Its wavefunction can be treated analytically, providing profound insights into the nature of quantum systems.
+O átomo de hidrogênio é especialmente significativo, pois é o átomo mais simples, contendo apenas um elétron.
+Sua função de onda pode ser tratada analiticamente, fornecendo insights profundos sobre a natureza dos sistemas quânticos.
 
 <br>
 
 <p align='center'>
-  <img src='img/hydrogen_probability_densities.png' width=85% />
+  <img src='https://github.com/ssebastianmag/hydrogen-wavefunctions/blob/main/img/hydrogen_probability_densities.png' width=85% />
 </p>
 <p align='center'>
-    <i>Electron probability density for hydrogen atom orbitals shown as cross-sections</i>
+    <i>Densidade de probabilidade eletrônica para orbitais de átomos de hidrogênio mostrados como seções transversais</i>
 </p>
 
 ---
 
-#### 1.1 Wavefunctions
+#### 1.1 Funções de onda
 
-A wavefunction, often denoted as ($\psi$), represents the quantum state of a particle in a system. 
-It provides information about the probability amplitude of position and momentum states of the particle. 
-
-
-
-#### 1.2 Electron Density | Probability Density
-
-The square magnitude of the wavefunction $|\psi|^2$, gives the probability density for 
-the particle's position in space. For an electron in an atom, it describes the spatial distribution 
-of the probability of locating the electron.
+Uma função de onda, frequentemente denotada como ($\psi$), representa o estado quântico de uma partícula em um sistema.
+Ela fornece informações sobre a amplitude de probabilidade dos estados de posição e momento da partícula. 
 
 
 
-#### 1.3 Atomic Orbitals
+#### 1.2 Densidade eletrônica | Densidade de probabilidade
 
-These are mathematical functions that describe the wave-like 
-behavior of either one electron or a pair of electrons in an atom. These 
-functions can be used to determine the probability of finding an 
-electron in any specific region around the atom's nucleus.
+A magnitude quadrada da função de onda $|\psi|^2$, fornece a densidade de probabilidade para
+a posição da partícula no espaço. Para um elétron em um átomo, ela descreve a distribuição espacial
+da probabilidade de localizar o elétron.
+
+
+
+
+#### 1.3 Orbitais atômicos
+
+Essas são funções matemáticas que descrevem o comportamento ondulatório de um elétron ou de um par de elétrons em um átomo. Essas funções podem ser usadas para determinar a probabilidade de encontrar um elétron em qualquer região específica ao redor do núcleo do átomo.
 
 <br>
 
@@ -76,167 +55,152 @@ electron in any specific region around the atom's nucleus.
     <img src='https://github.com/ssebastianmag/hydrogen-wavefunctions/blob/edda6d746cbe2163f2e92e1191126d0fe7d6488a/img/(3%2C2%2C1)%5Blt%5D.png' width=50% />
 </p>
 <p align='center'>
-    <i>Electron density plot showing regions of varying electron probability</i>
+    <i>Gráfico de densidade eletrônica mostrando regiões de probabilidade eletrônica variável</i>
 </p>
 
 ---
 
-#### 1.4 Quantum Numbers
+#### 1.4 Números quânticos
 
-We can describe quantum numbers as a set of numerical values that provide a complete 
-description of a quantum particle's state. 
-For electrons in an atom, there are typically four quantum numbers:
+Podemos descrever números quânticos como um conjunto de valores numéricos que fornecem uma descrição completa do estado de uma partícula quântica. Para elétrons em um átomo, há tipicamente quatro números quânticos:
 <br>
 
-- Principal quantum number ($n$): `( 1 <= n )`<br>
-Represents the electron's energy level and relative size of the orbital.
+- Número quântico principal ($n$): `( 1 <= n )`<br>
+Representa o nível de energia do elétron e o tamanho relativo do orbital.
 
 
-- Azimuthal quantum number ($l$): `( 0 <= l <= n-1 )`<br>
-Relates to the shape of the atomic orbital.
+- Número quântico azimutal ($l$): `( 0 <= l <= n-1 )`<br>
+Relaciona-se com a forma do orbital atômico.
 
 
-- Magnetic quantum number ($m_l$): `( -l <= m <= l )`<br>
-Specifies the orientation of the orbital in space.
+- Número quântico magnético ($m_l$): `( -l <= m <= l )`<br>
+Especifica a orientação do orbital no espaço.
 
 
-- Spin quantum number ($m_s$): `( +1/2 or -1/2 )`<br>
-Describes the electron's intrinsic spin.
+- Número quântico de spin ($m_s$): `( +1/2 or -1/2 )`<br>
+Descreve o spin intrínseco do elétron.
 
 <br>
 
-> [!NOTE]
-> In the hydrogen atom, or any atom with a single electron (like ionized helium, lithium, etc.), 
-the electron's spin doesn't interact with anything else to affect its spatial distribution.
-> 
-> For our specific application with the hydrogen atom, we will focus on the first three quantum numbers. 
-As the electron's spin doesn't influence the shape or 
-distribution of the electron cloud.
+> [!NOTA]
+> No átomo de hidrogênio, ou qualquer átomo com um único elétron (como hélio ionizado, lítio, etc.),
+o spin do elétron não interage com mais nada para afetar sua distribuição espacial.
+>
+> Para nossa aplicação específica com o átomo de hidrogênio, focaremos nos três primeiros números quânticos.
+Como o spin do elétron não influencia a forma ou distribuição da nuvem de elétrons.
 
 ---
 
-### 2. Schrödinger Equation for Hydrogen Atom Wavefunctions
+### 2. Equação de Chrödinger para funções de onda do átomo de hidrogênio
 
-The Schrödinger equation serves as the foundation of quantum mechanics,
-it is a differential equation that determines the wavefunctions of a quantum system. 
-For the hydrogen atom, we use the following representation of the time-independent Schrödinger equation:
+A equação de Schrödinger serve como base da mecânica quântica,
+é uma equação diferencial que determina as funções de onda de um sistema quântico.
+Para o átomo de hidrogênio, usamos a seguinte representação da equação de Schrödinger independente do tempo:
+
 
 $\large \hat{H} \psi = E \psi$
 
-$H$ is the Hamiltonian operator, which represents the total energy (kinetic + potential) of the system, 
-and $E$ is the total energy of the system.
+$H$ é o operador hamiltoniano, que representa a energia total (cinética + potencial) do sistema,
+e $E$ é a energia total do sistema.
 
-Given the spherical symmetry of the hydrogen atom, we may express it in terms of 
-spherical coordinates $(r, \theta, \varphi)$ instead of rectangular coordinates $(x, y, z)$. 
-Where $r$ is the radial coordinate, $\theta$ is the polar angle (relative to the vertical z-axis), 
-and $\varphi$ is the azimuthal angle (relative to the x-axis).
+Dada a simetria esférica do átomo de hidrogênio, podemos expressá-la em termos de
+coordenadas esféricas $(r, \theta, \varphi)$ em vez de coordenadas retangulares $(x, y, z)$.
+Onde $r$ é a coordenada radial, $\theta$ é o ângulo polar (relativo ao eixo z vertical),
+e $\varphi$ é o ângulo azimutal (relativo ao eixo x).
 
 <p align='center'>
   <img src='img/coordinate_system.png' width=38% />
 </p>
 <p align='center'>
-    <i>Relationship between the spherical and rectangular coordinate systems</i>
+    <i>Relação entre os sistemas de coordenadas esféricas e retangulares</i>
 </p>
 
-The wavefunction $\psi(r, \theta, \varphi)$ can be represented as a product of radial and angular functions:
+A função de onda $\psi(r, \theta, \varphi)$ pode ser representada como um produto de funções radiais e angulares:
 
 $\large \psi(r, \theta, \varphi) = R(r) Y(\theta, \varphi)$
 
-When the Hamiltonian is expressed in spherical coordinates, it contains both radial and angular parts.
-By substituting this into the Schrödinger equation, we separate the equation into two parts: 
-one that depends only on $r$ (the radial part) and another that depends on $\theta$ and $\varphi$ (the angular part).
+Quando o hamiltoniano é expresso em coordenadas esféricas, ele contém partes radiais e angulares.
+Ao substituir isso na equação de Schrödinger, separamos a equação em duas partes:
+uma que depende apenas de $r$ (a parte radial) e outra que depende de $\theta$ e $\varphi$ (a parte angular).
+
 
 ---
 
-#### 2.1 Radial Component
+#### 2.1 Componente radial
 
 $\large R_{n \ell}(r) = \sqrt{\left( \frac{2}{n a_0} \right)^3 \frac{(n-\ell-1)!}{2n(n+\ell)!}} e^{-\frac{r}{n a_0}} \left( \frac{2r}{n a_0} \right)^{\ell} L_{n-\ell-1}^{2\ell+1}\left(\frac{2r}{n a_0}\right)$
 
-The radial wavefunction gives us information about the probability
-distribution of the electron as a function of distance $r$ from the 
-nucleus. Its form encompasses three major terms:
+A função de onda radial nos dá informações sobre a distribuição de probabilidade
+do elétron como uma função da distância $r$ do
+núcleo. Sua forma abrange três termos principais:
 
-**2.1.1 Exponential Decay**: Signifies the probability decay of finding an 
-electron as we move away from the nucleus. Here, $a_0$ is the Bohr 
-radius which sets a characteristic scale for atomic dimensions:
+**2.1.1 Decaimento Exponencial**: Significa o decaimento de probabilidade de encontrar um
+elétron conforme nos afastamos do núcleo. Aqui, $a_0$ é o raio de Bohr
+que define uma escala característica para dimensões atômicas:
 
 $\large e^{-\frac{r}{n a_0}}$
 
 <br>
 
-**2.1.2 Power term**: Dictates how the probability changes with $r$. 
-The azimuthal quantum number $\ell$ plays a significant role in determining 
-the number of nodes in the radial distribution:
+**2.1.2 Termo de potência**: Determina como a probabilidade muda com $r$.
+O número quântico azimutal $\ell$ desempenha um papel significativo na determinação
+do número de nós na distribuição radial:
 
 $\large \left( \frac{2r}{n a_0} \right)^{\ell}$
 
 <br>
 
-**2.1.3 Associated Laguerre Polynomials**: These polynomials contribute to the finer structure of the radial part, 
-especially defining nodes (regions where the probability is zero):
+**2.1.3 Polinômios de Laguerre associados**: Esses polinômios contribuem para a estrutura mais fina da parte radial,
+especialmente definindo nós (regiões onde a probabilidade é zero):
 
 $\large L_{n-\ell-1}^{2\ell+1}\left(\frac{2r}{n a_0}\right)$
 
 ---
 
-#### 2.2 Angular Component
+#### 2.2 Componente angular
 
 $\large Y_{\ell}^{m}(\theta, \varphi) = (-1)^m \sqrt{\frac{(2\ell+1)}{4\pi}\frac{(\ell-m)!}{(\ell+m)!}} P_{\ell}^{m}(\cos\theta) e^{im\varphi}$
 
-The angular wavefunction yields the spherical harmonics, which gives the angular dependence of the wavefunction in 
-terms of the polar ($\theta$) and azimuthal ($\varphi$) angles.
+A função de onda angular produz os harmônicos esféricos, que fornecem a dependência angular da função de onda em
+termos dos ângulos polar ($\theta$) e azimutal ($\varphi$).
 
-These spherical harmonics provide a detailed account of the shapes and orientations of atomic orbitals,
-characterizing how electron probability distributions are spread out in space. 
-It has two components:
+Esses harmônicos esféricos fornecem um relato detalhado das formas e orientações dos orbitais atômicos,
+caracterizando como as distribuições de probabilidade de elétrons são espalhadas no espaço.
+Ele tem dois componentes:
 
-**2.2.1 Associated Legendre Polynomials**: These dictate the shape of the orbital in the polar ($\theta$) direction,
-helping to define the characteristic shapes (s, p, d, etc.) we often associate with atomic orbitals:
+**2.2.1 Polinômios de Legendre Associados**: Eles ditam a forma do orbital na direção polar ($\theta$),
+ajudando a definir as formas características (s, p, d, etc.) que frequentemente associamos aos orbitais atômicos:
 
 $\large P_{\ell}^{m}(\cos\theta)$
 
 <br>
 
-**2.2.2 Exponential Azimuthal Term**: This term provides the orientation of the orbital in the azimuthal plane, as 
-determined by the magnetic quantum number $m$:
+**2.2.2 Termo Azimutal Exponencial**: Este termo fornece a orientação do orbital no plano azimutal, conforme
+determinado pelo número quântico magnético $m$:
 
 $\large e^{im\varphi}$
 
 ---
 
-#### 2.3 Normalized wavefunction
+#### 2.3 Função de onda normalizada
 
-The resultant normalized wavefunction for the hydrogen atom is the product of the solutions of 
-the radial and angular components:
+TA função de onda normalizada resultante para o átomo de hidrogênio é o produto das soluções dos componentes radial e angular:
 
 $\large \psi_{n \ell m}(r, \theta, \varphi) = R_{n \ell}(r) Y_{\ell}^{m}(\theta, \varphi)$
 
 <br>
 
-To determine the probability density of the electron being in a certain location,
-we integrate the square magnitude of the wavefunction over all space: $|\psi_{n \ell m}|^2$
+Para determinar a densidade de probabilidade do elétron estar em um determinado local,
+integramos a magnitude quadrada da função de onda sobre todo o espaço: $|\psi_{n \ell m}|^2$
 
 $\large P(r, \theta, \varphi) = |\psi_{n \ell m}(r, \theta, \varphi)|^2$
 
 ---
-> Through analysis of the hydrogen atom wavefunction model, the behavior and distribution of electron density
-within atomic systems becomes apparent, shedding light upon the inherent uncertainty of quantum mechanics.
+> Por meio da análise do modelo de função de onda do átomo de hidrogênio, o comportamento e a distribuição da densidade de elétrons
+dentro dos sistemas atômicos se tornam aparentes, lançando luz sobre a incerteza inerente da mecânica quântica.
 ---
 
-## Implementation
-
-### Execution
-
-* [Standalone Module:](hydrogen_wavefunction.py)
-Run in your preferred IDE or code editor.
-* [Standalone Module with extended comments:](hydrogen_wavefunction_annotated.py)
-Run in your preferred IDE or code editor.
-* [Executable with CLI & Command Line Arguments:](hydrogen_wavefunction_cli.py)
-Run directly for the CLI tool or with command line arguments.
-* [IPython Notebook / Jupyter Notebook:](hydrogen_wavefunction_notebook.ipynb)
-Open with Jupyter Notebook.
-
----
+## Implementação
 
 #### Command line arguments:
 
@@ -245,20 +209,20 @@ $ python hydrogen_wavefunction_cli.py --help
 ```
 
 ```   
-usage: hydrogen_wavefunction_cli.py [-h] [--dark_theme] [--colormap COLORMAP] [n] [l] [m] [a0_scale_factor]
+usage: main.py [-h] [--dark_theme] [--colormap COLORMAP] [n] [l] [m] [a0_scale_factor]
 
-Hydrogen Atom - Wavefunction and Electron Density Visualization 
-for specific quantum states (n, l, m).  
+Átomo de hidrogênio - Visualização da função de onda e densidade eletrônica
+para estados quânticos específicos (n, l, m).  
 
 positional arguments:
-  n                     (n) Principal quantum number (int)
-  l                     (l) Azimuthal quantum number (int)
-  m                     (m) Magnetic quantum number (int)
-  a0_scale_factor       Bohr radius scale factor (float)
+  n                     (n) Número quântico principal (int)
+  l                     (l) Número quântico azimutal (int)
+  m                     (m) Número quântico magnético (int)
+  a0_scale_factor       Fator de escala do raio de Bohr (float)
 
 options:
-  -h, --help            show this help message and exit
-  --dark_theme          If set, the plot uses a dark theme
+  -h, --help            Mostra essa mensagem de ajuda e sai
+  --dark_theme          Caso setado, será plotado um gráfico com tema escuro
   --colormap COLORMAP   Seaborn plot colormap
 
 ```
@@ -266,15 +230,15 @@ options:
 ---
 
 #### Input args:
-    $ python hydrogen_wavefunction_cli.py 3 2 1 0.3
+    $ python main.py 3 2 1 0.3
 
 |    Parameter    |            Description            | Value |  Constraint   |
 |:---------------:|:---------------------------------:|:-----:|:-------------:|
-|        n        |  Principal quantum number ($n$)   |   3   |    1 <= n     |
-|        l        | Azimuthal quantum number ($\ell$) |   2   | 0 <= l <= n-1 |
-|        m        |   Magnetic quantum number ($m$)   |   1   | -l <= m <= l  |
-| a0_scale_factor | Bohr radius scale factor ($a_0$)  |  0.3  |               |
-|   dark_theme    |      Enable plot dark theme       |       |               |
+|        n        |  Número quântico principal ($n$)   |   3   |    1 <= n     |
+|        l        | Número quântico azimutal ($\ell$) |   2   | 0 <= l <= n-1 |
+|        m        |   Número quântico magnético ($m$)   |   1   | -l <= m <= l  |
+| a0_scale_factor | Fator de escala do raio de Bohr ($a_0$)  |  0.3  |               |
+|   dark_theme    |      Habilitar tema escuro do gráfico       |       |               |
 |    colormap     |       Seaborn plot colormap       |       |               |
 
 #### Output:
@@ -286,17 +250,16 @@ options:
 ---
 
 #### Input args:
-    $ python hydrogen_wavefunction_cli.py 3 2 1 0.3 --dark_theme
+    $ python main.py 3 2 1 0.3 --dark_theme
 
-|    Parameter    |            Description            |    Value     |  Constraint   |
-|:---------------:|:---------------------------------:|:------------:|:-------------:|
-|        n        |  Principal quantum number ($n$)   |      3       |    1 <= n     |
-|        l        | Azimuthal quantum number ($\ell$) |      2       | 0 <= l <= n-1 |
-|        m        |   Magnetic quantum number ($m$)   |      1       | -l <= m <= l  |
-| a0_scale_factor | Bohr radius scale factor ($a_0$)  |     0.3      |               |
-|   dark_theme    |      Enable plot dark theme       | --dark_theme |               |
-|    colormap     |       Seaborn plot colormap       |              |               |
-
+|    Parameter    |            Description            | Value |  Constraint   |
+|:---------------:|:---------------------------------:|:-----:|:-------------:|
+|        n        |  Número quântico principal ($n$)   |   3   |    1 <= n     |
+|        l        | Número quântico azimutal ($\ell$) |   2   | 0 <= l <= n-1 |
+|        m        |   Número quântico magnético ($m$)   |   1   | -l <= m <= l  |
+| a0_scale_factor | Fator de escala do raio de Bohr ($a_0$)  |  0.3  |               |
+|   dark_theme    |      Habilitar tema escuro do gráfico       |   --dark_theme   |               |
+|    colormap     |       Seaborn plot colormap       |       |               |
 #### Output:
 
 <p align='left'>
@@ -304,105 +267,16 @@ options:
 </p>
 
 ---
-
 #### Input args:
-    $ python hydrogen_wavefunction_cli.py 4 3 0 0.2 --colormap "magma"
-
-|    Parameter    |            Description            |  Value  |  Constraint   |
-|:---------------:|:---------------------------------:|:-------:|:-------------:|
-|        n        |  Principal quantum number ($n$)   |    4    |    1 <= n     |
-|        l        | Azimuthal quantum number ($\ell$) |    3    | 0 <= l <= n-1 |
-|        m        |   Magnetic quantum number ($m$)   |    0    | -l <= m <= l  |
-| a0_scale_factor | Bohr radius scale factor ($a_0$)  |   0.2   |               |
-|   dark_theme    |      Enable plot dark theme       |         |               |
-|    colormap     |       Seaborn plot colormap       | "magma" |               |
-
-#### Output:
-
-<p align='left'>
-  <img src='https://github.com/ssebastianmag/hydrogen-wavefunctions/blob/edda6d746cbe2163f2e92e1191126d0fe7d6488a/img/(4%2C3%2C0)%5Blt%5D.png' width=60% />
-</p>
-
----
-
-#### Input args:
-    $ python hydrogen_wavefunction_cli.py 4 3 0 0.2 --dark_theme --colormap "magma"
+    $ python main.py 20 10 5 0.01 --dark_theme --colormap "mako"
 
 |    Parameter    |            Description            |    Value     |  Constraint   |
 |:---------------:|:---------------------------------:|:------------:|:-------------:|
-|        n        |  Principal quantum number ($n$)   |      4       |    1 <= n     |
-|        l        | Azimuthal quantum number ($\ell$) |      3       | 0 <= l <= n-1 |
-|        m        |   Magnetic quantum number ($m$)   |      0       | -l <= m <= l  |
-| a0_scale_factor | Bohr radius scale factor ($a_0$)  |     0.2      |               |
-|   dark_theme    |      Enable plot dark theme       | --dark_theme |               |
-|    colormap     |       Seaborn plot colormap       |   "magma"    |               |
-
-#### Output:
-
-<p align='left'>
-  <img src='https://github.com/ssebastianmag/hydrogen-wavefunctions/blob/edda6d746cbe2163f2e92e1191126d0fe7d6488a/img/(4%2C3%2C0)%5Bdt%5D.png' width=60% />
-</p>
-
----
-
-#### Input args:
-    $ python hydrogen_wavefunction_cli.py 4 3 1 0.2 --dark_theme --colormap "mako"
-
-|    Parameter    |            Description            |    Value     |  Constraint   |
-|:---------------:|:---------------------------------:|:------------:|:-------------:|
-|        n        |  Principal quantum number ($n$)   |      4       |    1 <= n     |
-|        l        | Azimuthal quantum number ($\ell$) |      3       | 0 <= l <= n-1 |
-|        m        |   Magnetic quantum number ($m$)   |      1       | -l <= m <= l  |
-| a0_scale_factor | Bohr radius scale factor ($a_0$)  |     0.2      |               |
-|   dark_theme    |      Enable plot dark theme       | --dark_theme |               |
-|    colormap     |       Seaborn plot colormap       |    "mako"    |               |
-
-#### Output:
-
-<p align='left'>
-  <img src='https://github.com/ssebastianmag/hydrogen-wavefunctions/blob/edda6d746cbe2163f2e92e1191126d0fe7d6488a/img/(4%2C3%2C1)%5Bdt%5D.png' width=60% />
-</p>
-
-As we examine the electron density plots corresponding to the quantum numbers above, 
-we notice that with increasing principal quantum number $n$, 
-the complexity of the wavefunction grows Specifically:
-
-- The number of nodes (regions where the probability density is zero) increases.
-- The electron's spatial distribution expands, covering larger regions around the nucleus. 
-- The overall shape of the atomic orbital becomes more intricate and detailed.
-
----
-
-#### Input args:
-    $ python hydrogen_wavefunction_cli.py 9 6 1 0.04 --dark_theme --colormap "mako"
-
-|    Parameter    |            Description            |    Value     |  Constraint   |
-|:---------------:|:---------------------------------:|:------------:|:-------------:|
-|        n        |  Principal quantum number ($n$)   |      9       |    1 <= n     |
-|        l        | Azimuthal quantum number ($\ell$) |      6       | 0 <= l <= n-1 |
-|        m        |   Magnetic quantum number ($m$)   |      1       | -l <= m <= l  |
-| a0_scale_factor | Bohr radius scale factor ($a_0$)  |     0.04     |               |
-|   dark_theme    |      Enable plot dark theme       | --dark_theme |               |
-|    colormap     |       Seaborn plot colormap       |    "mako"    |               |
-
-#### Output:
-
-<p align='left'>
-  <img src='https://github.com/ssebastianmag/hydrogen-wavefunctions/blob/edda6d746cbe2163f2e92e1191126d0fe7d6488a/img/(9%2C6%2C1)%5Bdt%5D.png' width=60% />
-</p>
-
----
-
-#### Input args:
-    $ python hydrogen_wavefunction_cli.py 20 10 5 0.01 --dark_theme --colormap "mako"
-
-|    Parameter    |            Description            |    Value     |  Constraint   |
-|:---------------:|:---------------------------------:|:------------:|:-------------:|
-|        n        |  Principal quantum number ($n$)   |      20      |    1 <= n     |
-|        l        | Azimuthal quantum number ($\ell$) |      10      | 0 <= l <= n-1 |
-|        m        |   Magnetic quantum number ($m$)   |      5       | -l <= m <= l  |
-| a0_scale_factor | Bohr radius scale factor ($a_0$)  |     0.01     |               |
-|   dark_theme    |      Enable plot dark theme       | --dark_theme |               |
+|        n        |  Número quântico principal ($n$)   |      20      |    1 <= n     |
+|        l        | Número quântico azimutal ($\ell$) |      10      | 0 <= l <= n-1 |
+|        m        |   Número quântico magnético ($m$)   |      5       | -l <= m <= l  |
+| a0_scale_factor | Fator de escala do raio de Bohr ($a_0$)  |     0.01     |               |
+|   dark_theme    |      Habilitar tema escuro do gráfico       | --dark_theme |               |
 |    colormap     |       Seaborn plot colormap       |    "mako"    |               |
 
 #### Output:
@@ -411,10 +285,10 @@ the complexity of the wavefunction grows Specifically:
   <img src='https://github.com/ssebastianmag/hydrogen-wavefunctions/blob/edda6d746cbe2163f2e92e1191126d0fe7d6488a/img/(20%2C10%2C5)%5Bdt%5D.png' width=60% />
 </p>
 
-For extremely high quantum numbers, the following effects can be observed:
+Para números quânticos extremamente altos, os seguintes efeitos podem ser observados:
 
-- The complexity increases even further, resulting in numerous nodes and intricate patterns.
-- Evaluating the wavefunction over a vast spatial domain becomes computationally intensive.
-- Visualization can become cluttered, making it harder to discern specific details or features.
+- A complexidade aumenta ainda mais, resultando em vários nós e padrões intrincados.
+- Avaliar a função de onda em um vasto domínio espacial se torna computacionalmente intensivo.
+- A visualização pode se tornar confusa, dificultando o discernimento de detalhes ou características específicas.
 
 ---
