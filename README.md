@@ -1,3 +1,11 @@
+# 🚧 Atenção 🚧
+
+Esse código foi traduzido do inglês:
+
+Funções de onda do átomo de hidrogênio - PT-BR
+https://github.com/ssebastianmag/hydrogen-wavefunctions
+
+
 # Funções de onda do hidrogênio e gráficos de densidade eletrônica
 
 Modelagem e visualização de funções de onda de átomos de hidrogênio e densidade de probabilidade de elétrons.
@@ -109,7 +117,7 @@ Onde $r$ é a coordenada radial, $\theta$ é o ângulo polar (relativo ao eixo z
 e $\varphi$ é o ângulo azimutal (relativo ao eixo x).
 
 <p align='center'>
-  <img src='img/coordinate_system.png' width=38% />
+  <img src='https://github.com/ssebastianmag/hydrogen-wavefunctions/blob/main/img/coordinate_system.png' width=38% />
 </p>
 <p align='center'>
     <i>Relação entre os sistemas de coordenadas esféricas e retangulares</i>
