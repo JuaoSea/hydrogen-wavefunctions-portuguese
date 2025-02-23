@@ -172,7 +172,7 @@ def plot_wf_probability_density(n, l, m, a0_scale_factor, dark_theme=False, colo
         ax.tick_params(axis='x', colors='#000000')
         ax.tick_params(axis='y', colors='#000000')
 
-    ax.set_title('Hydrogen Atom - Wavefunction Electron Density', pad=130, fontsize=44, loc='left', color=title_color)
+    ax.set_title('Átomo de hidrogênio - Função de onda e Densidade eletrônica', pad=130, fontsize=35, loc='left', color=title_color)
     ax.text(0, 722, (
         r'$|\psi_{n \ell m}(r, \theta, \varphi)|^{2} ='
         r' |R_{n\ell}(r) Y_{\ell}^{m}(\theta, \varphi)|^2$'
